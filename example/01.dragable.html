@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+<!-- 引入本页的js文件 -->
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+<style>
+	
+$(function(){
+	$('#box').draggable({
+		revert:'true', //回到初始位置
+		cursor:'text',//默认move
+		//handle:'#pox',//传入id,做表头拖动
+		//disabled:'true',//不能拖动
+		//edge:10,//上下左右10px不能拖动。
+		//axis:'v',//设置v 或h  v上下，h水平。
+		proxy:'clone',//移动时，克隆。
+		deltaX:10,
+		delTaY:10, //拖动时，光标到左上方的距离。
+		//proxy: function(source1){
+			//console.log(source1);
+			//alert(source1);
+			//var p=...
+		//},
+		//onBeforeDrag :function(e){
+		//	alert('拖动前触发');
+		//},
+	});
+	//属性和事件一般写在里面，以键值对。
+	//方法一般写在外面。
+	$('#box').draggable('disable');
+	$('#box').draggable('enable');
+	//console.log($('#box').draggable('options'));
+	//最后一个要在拖动开始时并且colone才能触发，返回本身。
+
+	//修改默认属性。
+	$.fn.draggable.defaults.cursor="text";
+
+});
+</style>
+</head>
+<body>
+	<div id="box" class="easyui-draggable"
+	style="width:400px;height:200px;background:red;">
+	内容部分
+	</div>
+
+</body>
+</html>

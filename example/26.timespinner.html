@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖 spinner -->
+
+
+<style>
+
+</style>
+
+<script>
+$(function(){
+
+
+	$('#box').timespinner({
+		//editable : false,
+		value : '00:00:00',
+		//min : '00:00',
+		//max : '23:59',
+		//separator : '/',
+		showSeconds : true,
+		highlight : 2,
+	});
+	
+	$('#box').timespinner('setValue', '17:11:22');
+	
+	console.log($('#box').timespinner('getHours'));
+ 		
+
+});	
+</script>
+</head>
+<body>
+
+<!--
+<input id="box" class="easyui-timespinner">
+-->
+
+<input id="box">
+
+
+</body>
+</html>

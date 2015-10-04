@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖datagrid-->
+
+
+<style>
+
+</style>
+
+<script>
+
+	$(function () {
+
+		$('#box').propertygrid({
+			url : 'property.json',
+			showGroup : true,
+			groupField : 'group',
+			groupFormatter : function (group, row) {
+				return '[' + group + ']';
+			}
+		});
+		
+	});
+
+	function abc() {
+		//$('#box').propertygrid('collapseGroup');
+		$('#box').propertygrid('collapseGroup', 0);
+	}
+
+
+</script>
+</head>
+<body style="margin:20px;">
+
+
+
+<!--
+<table class="easyui-propertygrid" data-options="url:'property.json'" style="width:300px"></table>
+-->
+
+<table id="box" style="width:300px"></table>
+<input type="button" value="按钮" onclick="abc();">
+
+
+</body>
+</html>

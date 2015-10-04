@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+<style>
+	body{
+		margin: 100px;
+	}
+</style>
+<script>
+	$(function(){
+
+		$("#box").tooltip({
+			content: '这个是提示框',//可以放htmL
+			//position: 'top',//制定出现的方向
+			//trackMouse: true,//鼠标跟随
+			//deltaX : 100,//水平方向提示框的位置（位移）
+			//deltaY : 100,//垂直方向提示框的位置（位移）
+			//showEvent : 'click',//设置显示的触发方式
+			//hideEvent : 'dblclick',//双击隐藏
+			//showDelay :400,
+			//hideDelay :200,
+			// 事件
+			// onShow : function(e){
+			// 	alert('显示时触发');
+			// },
+			// onHide : function(e){
+			// 	alert('隐藏时触发');
+			// },
+			// onUpdate : function(content){ //只触发一次
+			// 	alert('内容改变了为:'+content);
+			// },
+			// onPosition : function(left,top){ //在提示框位置改变的时候
+			// 	console.log('left'+left+'top:',top);
+			// },
+			// onDestory : function(e){ //销毁触发
+			// 	  alert('已销毁');
+			// },
+
+
+
+		});	
+		// 方法
+
+		//改变content
+		// $('#box').click(function(){
+		// 	$(this).tooltip('update','改变了');
+		// });
+		//销毁
+		// $('#box').click(function(){
+		// 	$(this).tooltip('distory');
+		// });
+		//options 返回属性对象
+		//console.log($('#box').tooltip('options'));
+		//默认打开显示提示框
+		//$('#box').tooltip('show');
+		//$('#box').tooltip('hide');
+		//tip返回tip对象  arrow 返回箭头对象
+
+			// <div class="tooltip-content">这个是提示框</div>
+			// <div class="tooltip-arrow-outer" style="border-bottom-color: rgb(212, 212, 212);"></div>
+			// <div class="tooltip-arrow" style="border-bottom-color: rgb(255, 255, 255);"></div>
+			// 	});
+		//tip和arrow要在现实的时候去显示，放在show里执行。
+
+		// 重置提示框的位置
+		// 在show和hide的时候使用
+		// $('.tooltip-buttom').css('left',500);
+		// $.fn.tooltip.defaults.position ='top';
+	});		
+</script>
+</head>
+<body>
+
+	<a href="###" id="box">hover me</a>
+
+</body>
+</html>

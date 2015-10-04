@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+
+<!-- 这个accordion依赖于panel -->
+<style>
+
+</style>
+<script>
+$(function(){
+
+	$('#box').accordion({
+		width:500,
+		height:200,
+		//fit:true,
+		//border:false,
+		//animate:true,动画效果，默认true
+		//multiple:true,
+		// selected:1,
+
+		// 事件
+		// onSelect:function(title,index){
+		// 	alert(title+'|'+index);
+		// },
+		// onUnselect ，不要打开时执行。
+
+		// onAdd:function(){};
+		// onBeforeRemove(){};
+		// onRemove(){};
+
+
+	});
+
+	// 方法
+	//console.log($('#box').accordion('panels'));//获取所有面板
+	// resize 错位时重置。
+	// console.log($('#box').accordion('getSelected'));//获取选中面板
+	// console.log($('#box').accordion('getSelections'));//获取所有。
+	// console.log($('#box').accordion('getPanel',1));//获取指定面板
+	// console.log($('#box').accordion('getPanelIndex','#a2'));
+	//$('#box').accordion('select',1);//选定
+	//$('#box').accordion('unselect',0);//取消选定
+
+	$('#box').accordion('add',{
+		// 继承了panel
+		title:'new',
+		content:'neirong',
+		closable:true,
+		onClose:function(){
+			alert('close');
+		},
+
+		// 特有属性
+		//selected:false,
+		//collapsible:false,//无法折叠
+
+	});
+
+});	
+</script>
+</head>
+<body>
+	
+	<div id="box">
+		<div title="accordion1">accordion1</div>
+		<div title="accordion2" id='a2'>accordion2</div>
+		<div title="accordion3">accordion3</div>
+	</div>
+
+
+</body>
+</html>

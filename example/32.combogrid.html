@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖combobox和datagrid-->
+
+
+<style>
+
+</style>
+
+<script>
+$(function () {
+	
+	$('#box').combogrid({
+		loadMsg : '数据加载中...',
+		panelWidth : 600,
+		idField : 'id',
+		textField : 'user',
+		url : 'user.php',
+		fitColumns : true,
+		multiple: true,
+		//mode : 'remote',
+		filter: function(q, row){
+			var opts = $(this).combogrid('options');
+			return row[opts.textField].indexOf(q) >= 0;
+		},
+		columns : [[
+			{
+				field : 'id',
+				title : '编号',
+				width : 100,
+				checkbox : true,
+			},
+			{
+				field : 'user',
+				title : '帐号',
+				width : 100,
+			},
+			{
+				field : 'email',
+				title : '邮箱',
+				width : 100,
+			},
+			{
+				field : 'date',
+				title : '创建时间',
+				width : 100,
+			},
+		]],
+	});
+	
+});
+
+function abc() {
+	//$('#box').combogrid('clear');
+	//$('#box').combogrid('setValue', 2);
+	$('#box').combogrid('setValues', [1,2]);
+}
+
+</script>
+</head>
+<body style="margin:20px;">
+
+
+<!--
+<select style="width:250px;" class="easyui-combogrid" data-options="
+	panelWidth : 450,
+	url : 'content.json',
+	idField : 'id',
+	textField : 'user',
+	columns : [[
+		{
+			field : 'id',
+			title : '编号',
+			width : 100,
+		},
+		{
+			field : 'user',
+			title : '帐号',
+			width : 100,
+		},
+	]],
+"></select>
+-->
+
+
+<input id="box" name="box">
+<input type="button" value="按钮" onclick="abc();">
+
+</body>
+</html>

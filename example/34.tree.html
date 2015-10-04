@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖draggable和droppable-->
+
+
+<style>
+
+
+</style>
+
+<script>
+
+	$(function () {
+	
+	$('#box').tree({
+		//url : 'tree.json',
+		url:'tree.php',
+		animate : true,  //动画效果
+		//checkbox : true, //显示复选框
+		//cascadeCheck : false,//是否关联选中状态
+		//onlyLeafCheck : true,//是否在末尾节点之前显示复选框，目录不显示复选框
+		lines : true,//是否显示虚线
+		//dnd : true,//是否可以拖拽
+		//data : [{
+		//	"text" : "本地节点"
+		//}],
+		//formatter : function (node) {
+		//	return '[' + node.text + ']';
+		//}
+		// onLoadSuccess:function(node,data){
+		// 	$(data).each(function(index,value){
+		// 		if(this.state=='closed'){
+		// 			$('#box').tree('expandAll');
+		// 		}
+		// 	});
+		// },
+		// 事件列表
+		  /*
+		onClick : function (node) {
+			console.log(node);
+		},
+		
+		onDblClick : function (node) {
+			console.log(node);
+		},
+		
+		onBeforeLoad : function (node, param) {
+			console.log(node);
+			console.log(param);
+		},
+		
+		onLoadError : function (arg) {
+			console.log(arg.status);
+		},
+		
+		
+		onBeforeExpand : function (node) {
+			console.log(node);
+		},	
+		
+		
+		onBeforeCollapse : function (node) {
+			console.log(node);
+		}
+		
+		
+		onBeforeCheck : function (node, checked) {
+			console.log(node);
+			console.log(checked);
+		}
+		
+		onBeforeSelect : function (node, checked) {
+			console.log(node);
+		}
+		
+		
+		onContextMenu: function(e, node){
+			e.preventDefault();
+			// 查找节点
+			$('#box').tree('select', node.target);
+			// 显示快捷菜单
+			$('#menu').menu('show', {
+				left: e.pageX,
+				top: e.pageY
+			});
+		}
+		
+		onBeforeDrag : function (node) {
+			console.log(node);
+		}
+		
+		onDragEnter : function (target, source) {
+			console.log(target);
+			console.log(source);
+		}
+		*/
+		
+		onBeforeDrop : function (target, source, point) {
+			console.log(target);
+			console.log(source);
+			console.log(point);
+		}
+		
+	});
+
+
+
+});
+
+
+function abc() {
+	/*
+	$('#box').tree('loadData', [
+		{
+			text : '加载'
+		}
+	]);
+	*/
+	//$('#box').tree('reload');
+	//console.log($('#box').tree('getRoot'));
+	//console.log($('#box').tree('getRoots'));
+	//console.log($('#box').tree('getChecked'));
+	//console.log($('#box').tree('getChecked', 'unchecked'));
+	//console.log($('#box').tree('getSelected'));
+	var node = $('#box').tree('find', 1);
+	//$('#box').tree('select', node.target);
+	//$('#box').tree('uncheck', node.target);
+	//$('#box').tree('check', node.target);
+	//$('#box').tree('collapse', node.target);
+	//$('#box').tree('expand', node.target);
+	//$('#box').tree('expandAll');
+	//$('#box').tree('collapseAll');
+	//$('#box').tree('expandTo', node.target);
+	//$('#box').tree('scrollTo', node.target);
+	/*
+	$('#box').tree('append', {
+		parent : node.target,
+		data : [
+			{
+				text : '插入'
+			}
+		]
+	});
+	
+	$('#box').tree('insert', {
+		before : node.target,
+		data : [
+			{
+				text : '新增'
+			}
+		]
+	});
+	*/
+	//$('#box').tree('toggle', node.target);
+	//$('#box').tree('remove', node.target);
+	/*
+	$('#box').tree('update', {
+		target : node.target,
+		text : '修改'
+	});
+	*/
+}
+
+</script>
+</head>
+<body style="margin:20px;">
+
+
+
+<!--
+<ul class="easyui-tree">
+	<li>
+		<span>系统管理</span>
+		<ul>
+			<li>
+				<span>主机信息</span>
+				<ul>
+					<li>版本信息</li>
+					<li>数据库信息</li>	
+				</ul>
+			</li>
+			<li>更新信息</li>
+			<li>程序信息</li>	
+		</ul>
+	</li>
+	<li>
+		<span>会员管理</span>
+		<ul>
+			<li>新增会员</li>
+			<li>审核会员</li>	
+		</ul>
+	</li>
+</ul>
+-->
+
+<ul id="box"></ul>
+
+</body>
+</html>

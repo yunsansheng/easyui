@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖  draggalbe -->
+
+
+<style>
+
+</style>
+
+<script>
+$(function(){
+
+	$('#box').slider({
+		width : 300,
+		height : 300,
+		// mode : 'h',  v和h  默认垂直还是水平
+		rule : [0,'|',25,'|',50,'|',75,'|',100],
+		showTip : true,
+		// reversed : false, 调整最大值和最小值
+		value : 12,
+		min : 0,
+		max : 100,
+		step : 1,
+		/*
+		tipFormatter : function (value) {
+			return value + '%';
+		}
+		
+		onSlideStart : function (value) {
+			console.log(value);
+		},
+		onSlideEnd : function (value) {
+			console.log(value);
+		},
+		*/
+		onChange : function (newValue, oldValue) {
+			$('#text').css('font-size', newValue);
+		},
+	});
+	
+	$('#box').slider('resize', {
+		width : 500,
+		height : 30,
+	});
+	
+	$('#box').slider('setValue', 90);
+	console.log($('#box').slider('getValue'));
+	
+ 		
+
+});	
+</script>
+</head>
+<body style="margin:100px;">
+
+<!--
+<input class="easyui-slider">
+-->
+
+<input id="box">
+<span id="text">文字</span>
+
+
+
+</body>
+</html>

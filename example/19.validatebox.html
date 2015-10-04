@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖tooltip-->
+
+
+<style>
+
+</style>
+
+<script>
+
+$(function(){
+
+
+	$.extend($.fn.validatebox.defaults.rules,{
+		minLength:{
+			validator:function(value,param){
+				return value.length >=param[0];
+			},
+			message:'请输入不小于{0}的字符',
+		},
+	});
+
+	$('#email').validatebox({
+		required:true,
+		validType:'minLength[5,10]',
+		//validType:'email',  //string array 
+		//validType:'url',
+		//validType:'length[2,10]',
+		//validType:"remote['content.php','abc']"
+		// validType['email','length[2,10]'],
+		//delay:1000,
+		//missingMessage:'显示的内容',
+		//invalidMessage:'输入无效',
+		//tipPosition:'bottom',//left ,top bottom
+		//deltaX:100,
+		//novalidate:true,
+
+	});
+
+	// 方法列表
+	//console.log($('#email').validatebox('options'));
+	//$('#email').validatebox('destroy');
+	//console.log($('#email').validatebox('validate'));
+	//console.log($('#email').validatebox('isValid'));//有用
+	// $('#email').validatebox('disablevalidation');
+	// $('#email').validatebox('enablevalidation');
+
+
+
+});	
+</script>
+</head>
+<body>
+<!--
+<input id="email" type="text" class="easyui-validatebox"
+data-options=" required:true ,validType:'email'">-->
+
+<input id="email" type="text">
+
+</body>
+</html>

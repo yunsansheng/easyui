@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖linkbutton-->
+
+
+<style>
+
+</style>
+<script>
+$(function(){
+
+	$('#box').pagination({
+		total:5,
+		pageSize:1,  //每页显示几条
+		pageNumber:1, //默认显示第几页
+		pageList:[1,2],
+		// loading:true,不用
+		buttons:[{
+			iconCls:'icon-add'
+		},'-',{
+			iconCls:'icon-edit'
+		}],
+		//layout:['first','prev','links','next','last'],
+		//showpagelist:false, //是否显示页面导航列表
+		//showRefresh:false, //是否显示刷新
+		//beforePageText:'哈哈',
+		//afterPageText:'有{pages}个',
+		/*
+		displayMsg:'从{from}到{to}，有{total}人',
+		onSelectPage:function(pageNumber,pageSize){
+			$('#content').panel('refresh','user.php?page='+pageNumber+'&pagesize='+pageSize);
+		},
+		onBeforeRefresh:function(pageNumber,pageSize){
+			alert('刷新之前');
+		},
+		onRefresh:function(pageNumber,pageSize){
+			alert('刷新之后');
+		},
+		onChangePageSize:function(pageSize){
+			alert('条数改变');
+		},
+		*/
+
+
+	});
+
+		/*
+		$(document).click(function(){
+			$('#box').pagination('refresh',{
+				pageSize:2,
+				pageNumber:2, 
+			});
+		});
+
+		*/
+
+		//$('#box').pagination('select',2);
+
+});	
+</script>
+</head>
+<body>
+	
+<!-- <div class="easyui-pagination" style="border:solid 1px #ccc;"
+data-options='total:2000,pageSize:10'
+></div>
+ -->
+
+<div id="content" class="easyui-panel" style="height: 200px"
+data-options="href:'user.php?page=1&pagesize=1' "></div>
+ <div id="box"></div>
+
+</body>
+</html>

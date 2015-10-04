@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖combo和calendar  -->
+
+
+<style>
+
+</style>
+
+<script>
+$(function(){
+
+	var buttons = $.extend([], $.fn.datebox.defaults.buttons);
+	buttons.splice(1, 0, {
+		text: '新增',
+		handler: function(target){
+			alert('新增');
+		}
+	});
+
+	$('#box').datebox({
+		panelWidth:195,
+		panelHeight:195,
+		// currentText:'T',按钮文本
+		// closeText:'C',
+		//buttons : buttons,
+		/*
+		formatter : function (date) {
+			return date.getFullYear() + '/' + date.getMonth() + 1 + '/' + date.getDate();
+		},
+		parser : function (date) {//很少用，定日期
+			return new Date(2015,6,1);
+		},
+		onSelect : function (date) {
+			alert('触发！');
+		},
+		*/
+
+
+ 		
+	});
+	/*
+	$('#cc').calendar({
+		firstDay:1,
+	});
+	*/
+	$('#box').datebox('calendar').calendar({
+		firstDay : 1,
+	});
+	
+	$('#box').datebox('setValue', '2015-6-1');//可以直接写字符串
+
+
+
+
+});	
+</script>
+</head>
+<body>
+
+<input  id="box" >
+
+<!-- <input class="easyui-datebox" data-options="sharedCalendar:'#cc'">
+<input class="easyui-datebox" data-options="sharedCalendar:'#cc'">
+
+<div id="cc"></div> -->
+
+
+</body>
+</html>

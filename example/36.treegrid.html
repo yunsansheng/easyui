@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖datagrid 和tree-->
+
+
+<style>
+
+
+</style>
+
+<script>
+
+	$(function () {
+	
+	$('#box').treegrid({
+		url : 'treegrid.json',
+		width : 400,
+		idField : 'aid',
+		treeField : 'aname',
+		columns : [[
+			{
+				field : 'aname',
+				title : '菜单名称',
+				width : 180,
+			},
+			{
+				field : 'date',
+				title : '创建时间',
+				width : 180,
+			},
+		]]
+	});
+	
+});
+
+
+
+</script>
+</head>
+<body style="margin:20px;">
+
+<!--
+<table class="easyui-treegrid" data-options="width:400,url:'treegrid.json',idField:'id',treeField:'name'">
+	<thead>
+		<tr>
+			<th data-options="field:'name',width:180">菜单名称</th>
+			<th data-options="field:'date',width:180">创建时间</th>
+		</tr>
+	</thead>
+</table>
+-->
+
+<table id="box"></table>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--不依赖其他组件  -->
+
+
+<style>
+
+</style>
+
+<script>
+
+$(function(){
+
+	$('#box').calendar({
+		// width:300,
+		// height:400,
+		// fit:true,
+		// border：false,
+		// firstDay:1,//默认第一天是星期一
+		//weeks:['S','M','T','W','F','S'],
+		// months:['Jan','..'],
+		// year:2015,
+		// month:6,
+		// current:new Date(2015,6,1),选中日期
+
+		// formatter:function(date){
+		// 	return '#'+date.getDate(),
+		// },
+
+		// styler:function(date){
+		// 	// if(date.getDate()==1){//一号
+		// 	// 	return 'background-color:#ccc';
+		// 	// },
+		// 	// if(date.getDay()==1){ //星期一
+		// 	// 	return 'background-color:#ccc';
+		// 	// }
+
+		// },
+		/*
+		validator:function(date){
+			if(date.getDay()==1){ //只能选中星期一
+				return true;
+			}else
+			{
+				return false;
+			}
+		}
+		*/
+		// 事件
+		/*
+		onSelect :function(date){
+			alert(date);
+		},
+
+		onChange :function(newDate,oldDate){
+			alert(newDate+'|'+oldDate);
+		},
+		*/
+
+	});
+
+	// 方法
+	// options resize
+	// moveTo  运动到指定日期
+	$('#box').calendar('moveTo',new Date(2015,6,1));
+
+});	
+</script>
+</head>
+<body>
+
+<div id="box"></div>
+</body>
+</html>

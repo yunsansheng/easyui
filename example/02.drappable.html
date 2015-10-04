@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+	<script>
+
+	$(function(){
+		//放置组件
+		$('#dd').droppable({
+			accept : '#box',
+			//disabled: true 禁止拖入
+			onDragEnter: function(e,source){
+				//console.log(source);
+				$(this).css('background','blue');
+				//alert('enter');//先触发这个，一次
+			},
+			onDragOver: function(e,source){
+				//console.log(source);
+				$(this).css('background','blue');
+				//alert('over');//不停的拖动中多次触发。
+			},
+			onDragLeave: function(e,source){
+				//console.log(source);
+				$(this).css('background','blue');
+				//alert('over');//离开时触发
+			},
+			onDrop: function(e,source){
+				//console.log(source);
+				$(this).css('background','blue');
+				//alert('over');//松开时触发。
+			},
+		});
+
+	//查看属性
+	//consloe.log($('#dd').droppable('options'));
+	//禁用、启用
+	//$('#dd').draggable('disable');
+	//$('#dd').draggable('enable');
+	//修改默认属性
+	$.fn.droppable.defaults.disabled= true;
+
+		$('#box').draggable({
+
+
+		});
+
+
+	});
+	</script>
+</head>
+<body>
+<div id="dd" style="width:400px;height: 300px;background-color: orange" ></div>
+	<div id="box" 
+	style="width:100px;height:100px;background:black;">
+	  
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖validatebox  -->
+
+
+<style>
+
+</style>
+
+<script>
+
+$(function(){
+
+	$('#box').numberbox({
+		disabled:false,
+		// value:555,
+		//min:5,
+		//max:500,
+		precision:2,//小位数,默认0
+		// decimalSeparator:'.'默认的分隔方式,一般不用
+		groupSeparator:',',//整数分割
+		// prefix: '$',//前置
+		// suffix:'€',//后置
+		// filter:function(){
+		// 	return:true,
+		// },
+		// formatter:function(value){
+		// 	return '111,'+ value;
+		// },
+		// parser:function(s){
+		// 	return '111,'+ s;
+		// },  //上面只是表面的格式化，下面的会直接改变value
+
+		// 事件
+		// onChange:function(newValue,oldValue){
+		// 	alert(newValue+'|'+oldValue);
+		// },
+
+	});
+		// 方法
+		// options destroy disable enable
+		$(document).keyup(function(){
+				// $('#box').numberbox('fix');
+				// getValue   setValue
+				// clear reset
+				
+		});
+
+
+});	
+</script>
+</head>
+<body>
+
+<input type="text" id="box" >
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖numberbox spinner -->
+
+
+<style>
+
+</style>
+
+<script>
+$(function(){
+
+	$('#box').numberspinner({
+		value : 10,
+		increment : 5,
+		min : 10,
+		max : 500, 
+		onSpinUp : function () {
+			//alert('up');
+		},
+		onSpinDown : function () {
+			//alert('down');
+		},
+	});
+	
+	//console.log($('#box').numberspinner('getValue'));
+	$('#box').numberspinner('setValue', 100);
+
+ 		
+
+});	
+</script>
+</head>
+<body>
+
+<!--
+<input id="box" class="easyui-numberspinner">
+-->
+<input id="box">
+
+
+</body>
+</html>

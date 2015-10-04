@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+<style>
+	body{
+		margin: 100px;
+	}
+</style>
+<script>
+$(function(){
+
+	$('#box').progressbar({
+		width : 400,
+		height : 40,
+		value : 30,
+		text : '{value}%',//默认值,一般不去改。
+
+		//事件，改变时触发
+		// onChange : function(newValue,oldValue){
+		// 	console.log(newValue+'yuan:'+oldValue);
+		// }, 
+
+	});
+
+	// 方法
+
+	// 设置value
+	// setTimeout(function(){
+	// 	$('#box').progressbar('setValue',70);
+	// },100);
+	// 动画效果
+	// setInterval(function(){
+	// 	$('#box').progressbar('setValue',$('#box').progressbar('getValue')+5)},
+	// 	200
+	// );
+	// 返回对象
+	// console.log($('#box').progressbar('options'));
+	// 设置大小
+	// $('#box').progressbar('resize',600);	
+
+	$.fn.progressbar.defaults.value =30;
+	
+});	
+</script>
+</head>
+<body>
+
+	<div id="box"></div>
+	
+</body>
+</html>

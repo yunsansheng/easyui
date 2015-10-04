@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+<script>
+	$(function(){
+		
+		$('#rr').resizable({
+			//disabled:true,
+			//handles:'e,s,se',//东和南可以拖动,n,e,s,w,ne,se,sw,nw,all
+			// minWidth: 200,
+			// minHeight: 200,
+			// maxWidth:400,
+			// maxHeight:400,
+			// edge:50,
+			// 事件
+			//开始时触发
+			onStartResize: function(e){
+				console.log('调整前触发');
+			},
+			onResize: function(e){
+				console.log('调整期间触发');//不停的触发
+				return false;//拖动停止时才改变大小。
+			},
+			onStopResize: function(e){
+				console.log('停止调整的时候出发');
+			},
+
+		});
+		console.log($('#rr').resizable('options'));
+		$('#rr').resizable('disable');
+		$('#rr').resizable('enable');
+		$.fn.resizable.defaults.disable= true;
+		
+	});
+</script>
+</head>
+<body>
+<div id="rr" style="width:400px;height: 300px;border:solid 1px black;></div>
+	<div id="box" 
+	style="width:100px;height:100px;background:black;">
+	  
+	</div>
+
+</body>
+</html>

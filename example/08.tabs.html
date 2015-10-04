@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+
+<!-- 这个tab依赖于linkbutton和panel -->
+<style>
+
+</style>
+<script>
+$(function(){
+
+	$('#box').tabs({
+		width :350,
+		height :200,
+		plain:true,//去掉背景
+		//fit:true,//全屏
+		border:true,
+		//tabWidth :50,//默认auto  
+		tabWidth:50,
+		tabHeight:35, 
+		//scrollIncrement:50, //跨度
+		//scrollDuration:1000, //时间
+		tools:[{
+			iconCls:'icon-add',
+			handler :function(){
+				alert('add');
+			},
+		}],
+		// tools:"#tt",
+		toolPosition: 'left',
+		//tabPosition: 'bottom', //top right left bottom
+		headerWidth:100,   //left 和right的时候才有效果。
+		// selected :1, // 初始化选中一个tab,默认为0
+		// showHeader:false,//false隐藏掉tab.
+		// 事件列表
+
+		// onSelect : function(title,index){//选中时
+		// 	 alert(title+'|'+index);
+		// },
+		// onUnselect : function(title,index){//离开选中时
+		// 	 alert(title+'|'+index);
+		// },
+		// onBeforeClose:function(title,index){//关闭前
+		// 	 alert(title+'|'+index);
+		// },
+		// onClose:function(title,index){//关闭中
+		// 	 alert(title+'|'+index);
+		// },
+		// onContextMenu :function(e,title,index){ //右击触发自定义事件
+		// 	alert(e.type+'|'+title+'|'+index);
+		// }
+
+		// onAdd:function(title,index){
+		// 	 alert(title+'|'+index);
+		// },
+		// onLoad:function(panel){
+		// 	 alert(panel);
+		// },
+		// onUpdate:function(title,index){
+		// 	 alert(title+'|'+index);
+		// },
+
+		 
+ 	});
+	//}).css('display','none');
+
+	// 方法列表
+	// options
+	// console.log($('#box').tabs('tabs')); //返回tab对象
+	// $(document).click(function(){
+	// 	$('#box').tabs().css('display','block');
+	// 	$('#box').tabs('resize'); 错位时，重置
+	// });
+
+	$('#box').tabs('add',{
+		// 继承panel的属性
+		id:"bbb",
+		title:'new',
+		content:'newcontent',
+		href:'content.php',
+		// cache:'false',
+		iconCls:'icon-add',
+		// width:100,//选项卡面板的宽度
+		// height:100,//高度
+		collapsible:true,
+
+		// 选项卡独有的
+		closable:true,
+		// selected:true,
+	});
+
+	// 关闭选项卡
+	//$('#box').tabs('close',1);
+	// 获取选项卡
+	//console.log($('#box').tabs('getTab',1));
+
+	//getTabIndex 获取选项卡的索引。
+	console.log($('#box').tabs('getTabIndex','#tab2'));
+	// 或
+	console.log($('#box').tabs('getTabIndex',$('#tab2')));
+	console.log($('#box').tabs('getSelected'));	
+	// select选择一个选项卡
+	$('#box').tabs('select',0);
+	$('#box').tabs('unselect',0);
+	$('#box').tabs('hideHeader');
+	$('#box').tabs('showHeader');
+	console.log($('#box').tabs('exists',1));//存在true,不存在false
+	
+	$('#box').tabs('update',{
+		tab:$('#tab2'),
+		options:{
+			title:'修改',
+		},
+	});	
+	
+	// $('#box').tabs('disableTab',1);
+	// $('#box').tabs('enableTab',1);
+	// $('#box').tabs('scrollby',100);//移动
+
+
+});	
+</script>
+</head>
+<body>
+	
+	<div id="box">
+		<div title="tabl">tab1</div>
+		<div title="tab2" id="tab2" data-options="closable:true">tab2</div>
+		<div title="tab3">tab3</div>
+	</div>
+
+
+</body>
+</html>

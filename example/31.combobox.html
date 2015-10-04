@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖combobox-->
+
+
+<style>
+
+</style>
+
+<script>
+$(function () {
+	
+	$('#box').combobox({
+		valueField : 'id',
+		textField : 'user',
+		//url : 'content.json',
+		url : 'user.php',
+		groupField : 'gender',
+		groupFormatter : function (group) {
+			return '[' + group + ']';
+		},
+		filter: function(q, row){
+			var opts = $(this).combobox('options');
+			return row[opts.textField].indexOf(q) >= 0;
+		},
+		formatter : function (row) {
+			var opts = $(this).combobox('options');
+			return '[' + row[opts.textField] + ']';
+		},
+		
+		/*
+		onSelect : function (record) {
+			alert('选择一个项时触发！');
+			console.log(record);
+		},
+		*/
+		onUnselect : function (record) {
+			alert('取消触发！');
+			console.log(record);
+		},
+		
+		//mode : 'remote',
+		/*
+		data : [
+			{
+				"id" : 1,
+				"user" : "蜡笔小新",
+				"email" : "xiaoxin@163.com",
+				"date" : "2014-10-1"
+			},
+			{
+				"id" : 2,
+				"user" : "樱桃小丸子",
+				"email" : "xiaowanzi@163.com",
+				"date" : "2014-10-2"
+			},
+			{
+				"id" : 3,
+				"user" : "黑崎一护",
+				"email" : "yihu@163.com",
+				"date" : "2014-10-3"
+			}
+		]
+		*/
+		
+	});
+	
+});
+
+function abc() {
+	//$('#box').combobox('unselect', 1);
+	//$('#box').combobox('setValue', 1);
+	//$('#box').combobox('setValues', [1,2]);
+	//$('#box').combobox('reload');
+	//console.log($('#box').combobox('getData'));
+	$('#box').combobox('loadData', [
+			{
+				"id" : 1,
+				"user" : "蜡笔小新",
+				"email" : "xiaoxin@163.com",
+				"date" : "2014-10-1"
+			},
+			{
+				"id" : 2,
+				"user" : "樱桃小丸子",
+				"email" : "xiaowanzi@163.com",
+				"date" : "2014-10-2"
+			},
+			{
+				"id" : 3,
+				"user" : "黑崎一护",
+				"email" : "yihu@163.com",
+				"date" : "2014-10-3"
+			}
+		]);
+}
+
+
+</script>
+</head>
+<body style="margin:20px;">
+
+	 <!--
+<select class="easyui-combobox" style="width:200px;">
+	<option value="aaaa">aaaa</option>
+	<option value="bbbb">bbbb</option>
+	<option value="cccc">cccc</option>
+	<option value="dddd">dddd</option>
+</select>
+-->
+
+<input id="box" name="box">
+<input type="button" value="按钮" onclick="abc()">
+
+
+</body>
+</html>

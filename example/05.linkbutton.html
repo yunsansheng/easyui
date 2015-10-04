@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+<style>
+	body{
+		margin: 100px;
+	}
+</style>
+<script>
+$(function(){
+//没有事件，只有属性和方法。
+	$("#box").linkbutton({
+		// id:'pox',//改变id
+		// disabled: true,
+		toggle:true, //设置选中和非选中。点击切换
+		selected :true,//选中或者非选中状态。
+		group : 'sex',//实现radio功能
+		plain:true, //简单效果
+		text :'文字',//改变文字
+		iconCls :'icon-add',//设置按钮图标
+		iconAlign : 'right',//定义按钮的位置
+
+	});	
+
+	//方法
+	console.log($('#box').linkbutton('options'));
+	// disable   enable select  unselect
+	$.fn.linkbutton.defaults.iconCls='icon-add';
+
+
+		
+});	
+</script>
+</head>
+<body>
+
+	<a href="###" id="box">按钮</a>
+	
+</body>
+</html>

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--不依赖其他组件  右键菜单-->
+
+
+<style>
+
+</style>
+<script>
+$(function(){
+
+	$(document).on('contextmenu',function(e){
+		e.preventDefault();
+		$('#box').menu('show',{
+			left:e.pageX,  //鼠标点击的位置
+			top:e.pageY,
+		});
+	});
+
+	//console.log($('#box').menu('options'));
+
+	// $(document).on('contextmenu',function(e){
+	// 	e.preventDefault();
+	// 	$('#box').menu('hide',{
+	// 		left:e.pageX,  //鼠标点击的位置
+	// 		top:e.pageY,
+	// 	});
+	// });
+
+	// $('#box').menu('destroy'); //销毁菜单
+	//console.log($('#box').menu('getItem','#new').id);获取属性
+	// $('#box').menu('setText',{
+	// 	target:'#new',
+	// 	text:'new1',
+	// }); 
+	// $('#box').menu('setIcon',{
+	// 	target:'#new',
+	// 	iconCls:'icon-add',
+	// }); 
+	
+	//console.log($('#box').menu('findItem','退出'));
+
+	/*
+	$('#box').menu('appendItem',{
+		id:'add',
+		text:'新的',
+		iconCls:'icon-add',
+		href:'123.html',
+		onclick:function(){
+
+		},
+	});
+	*/
+
+	//$('#box').menu('removeItem','#new');
+	//$('#box').menu('disableItem','#new');
+	//$('#box').menu('enableItem','#new');
+
+
+	// 菜单事件
+	$('#box').menu({
+		//onShow:function(){},
+		//onHide:function(){},
+		onClick:function(item){
+			alert(item.text);
+		},
+	});
+
+});	
+</script>
+</head>
+<body>
+	
+
+	<!-- left top zindex minwidth hideonUnhover -->
+	<div id="box" class="easyui-menu" data-options="hideonUnhover:false">
+		<div id="new">新建
+			<div>
+				<div>word</div>
+				<div>excel</div>
+			</div>
+		</div>
+		<div>打开</div>
+		<div>保存</div>
+		<div>退出</div>
+	</div>
+
+
+</body>
+</html>

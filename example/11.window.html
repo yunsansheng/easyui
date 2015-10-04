@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+
+<!-- 这个依赖于panel和resizeable还有draggable -->
+<style>
+
+</style>
+<script>
+$(function(){
+
+	$('#box').window({
+		width:400,
+		height:300,
+		title:'窗口',
+		collapsible:false,//是否有折叠按钮。
+		minimizable:false,
+		maximizable:false,
+		closable:true,
+		//closed:true,
+		zIndex:9999,    //默认为9000,
+		//draggable:false,//拖动
+		//resizable:false,
+		shadow:true,
+		modal:true,
+		//inline:true,  //以父容器为中心。
+		iconCls:'icon-add',
+		//fit:'true',
+
+		// 事件
+		// onClose:function(){
+		// 	alert('close');
+		// },
+	});
+		// 方法
+		//console.log($('#box').window('window'));
+		// 参考panel的方法
+		// console.log($('#box').window('body')); 
+		/*
+		$(document).click(function(){
+			$('#box').window('move',{
+				left:0,
+				top:0,
+			})
+		});
+
+		$(document).dblclick(function(){
+			$('#box').windiw('center');
+			//或者hcenter vcenter
+		});
+		*/
+
+		//window 也可以添加layout 和linkbutton.
+
+
+
+});	
+</script>
+</head>
+<body>
+	
+<div id="box">
+	<div class="easyui-layout" data-options="fit:true">
+		<div data-options="region:'west'" style='width:50px'></div>
+		<div data-options="region:'center'"></div>
+		<div data-options="region:'south'" style="height:50px; text-align:right; padding: 5px 5px 0 0;" >
+			<a class="easyui-linkbutton">确认</a>
+			<a class="easyui-linkbutton">取消</a>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

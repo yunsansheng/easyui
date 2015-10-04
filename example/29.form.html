@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--不依赖其他组件  只能在js加载-->
+
+
+<style>
+
+</style>
+
+<script>
+$(function(){
+
+	$('#box').form({
+		url : 'content.php',
+		onSubmit : function (param) {
+			param.code = '320902';
+			return $(this).form('validate');
+		},
+		success : function (data) {
+			alert(data);
+			//var data = eval('(' + data + ')');
+			//if (data.email) {
+			//	alert(data.e mail);
+			//}
+		},
+	});
+
+	/*
+	$('#box').form('load', {
+		name : '蜡笔小新',
+		email : 'xiaoxin@163.com',
+	});
+	
+	
+	$('#box').form({
+		onBeforeLoad : function () {
+			alert('load之前');
+		},
+		onLoadSuccess : function (data) {
+			alert('load成功' + data.email);
+		},
+		onLoadError : function () {
+			alert('错误');
+		}
+	});
+	
+	
+	$('#box').form('load', 'load.php');
+
+	*/
+	
+	$('#box').form('disableValidation');
+	$('#box').form('enableValidation');
+	
+ 		
+
+});	
+</script>
+</head>
+<body style="margin:100px;">
+
+<form id="box" method="post" action="123.html">
+	<p>帐号：<input type="text" name="name" class="easyui-validatebox" data-options="required:true"></p>
+	<p>邮件：<input type="text" name="email" class="easyui-validatebox" data-options="validType:'email',required:true"></p>
+	<input type="submit">
+</form>
+
+
+
+</body>
+</html>

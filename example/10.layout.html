@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+
+<!-- 这个依赖于panel和resizeable -->
+<style>
+
+</style>
+<script>
+$(function(){
+
+	$('#box').layout({
+		fit: true
+	});
+
+	// 方法
+	// resize
+	// panel返回指定的面板
+	// console.log($('#box').layout('panel','north'));
+	// console.log($('#box').layout('collapse','north'));
+	// console.log($('#box').layout('expand','north'));
+
+	$('#box').layout('add',{
+		title:'zhongjian',
+		region:'center',
+	});
+
+	$('#box').layout('remove','east');
+
+});	
+</script>
+</head>
+<body>
+	
+
+	
+
+<div id="box" style="width:600px;height:400px;">
+	<div data-options="
+		region:'north',
+		title:'上北',
+		border : false, //面板边框
+		split : true,//可以改变大小
+		iconCls : 'icon-save',//图标
+		//href : 'content.html',//加载
+		collapsible : false,//不能折叠
+		maxHeight : 100, 
+	" style="height:200px;"></div>
+	<div data-options="region:'south',title:'下南',split : true," style="height:100px;"></div>
+	<div data-options="region:'west',title:'左西',split : true," style="width:100px;"></div>
+	<div data-options="region:'east',title:'右东',split : true," style="width:100px;"></div>
+	<div data-options="region:'center',title:'中间' "></div>
+</div>
+
+
+</body>
+</html>

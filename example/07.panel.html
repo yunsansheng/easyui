@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+<style>
+
+</style>
+<script>
+$(function(){
+
+	$('#box').panel({
+		//id :'pox',
+		title:'面板',
+		width: 500,
+		height: 150,
+		iconCls: 'icon-search',
+		//left:300,
+		//top:200,
+		cls:'a',//主面板添加了一个a的class
+		// headcls:'',
+		// bodycls:'',
+		style: {
+			'min-height':'200px',
+		},//制定样式到面板,不怎么用，因为会被冲突掉。
+		//fit:true,//设置成true时自适应。
+		//border:false,
+		// doSize : true, 默认true，没什么用
+		//noheader:true,//去掉面板标题
+		//content:'修改了',//修改面板内容
+		collapsible:true,//折叠
+		//minimizable:true,//隐藏
+		maximizable:true,//最大化
+		//closable:true,//关闭
+		//tools: '#tt',             //工具栏，选择器或者数组
+		tools:[{
+			iconCls: 'icon-reload',
+			handler: function(){
+				//alert('reload');
+				$('#box').panel('refresh');//刷新
+			}	
+		}],
+		//collapsed:true,
+		//minimized:true,
+		//maximized:true,
+		//closed: true,
+		href: 'content.php',//从url读取远程数据，并且默认到界面中。
+		//cache:true;  默认 缓存内容，默认为true
+		loadingMessage:'加载中...',
+		extractor:function(data){ //对数据进行处理
+			return data.substring(0,3);
+		},
+	// 事件列表
+		// onBeforeLoad : function(){
+		// 	alert('远程加载前触发');
+		// 	return false; //返回false 取消远程加载
+		// },
+		// onLoad : function(){
+		// 	alert('远程加载时触发');
+		// },
+
+		// onBeforeOpen : function(){
+		// 	alert('beforeopen');
+		// 	return false; //返回false 取消打开onopen
+		// },
+		// onOpen : function(){
+		// 	alert('onopen');
+		// },
+
+		// onBeforeClose : function(){
+		// 	alert('beforeClose');
+		// 	return false; //返回false 
+		// },
+		// onClose : function(){
+		// 	alert('onClose');
+		// },
+
+		// onBeforeDestroy : function(){
+		// 	alert('beforeDestroy');
+		// 	return false; //返回false 
+		// },
+		// onDestroy : function(){
+		// 	alert('onDestroy');
+		// },
+
+		// 折叠和展开
+		// onBeforeCollapse : function(){
+		// 	alert('beforeCollapse');
+		// 	return false; //返回false 
+		// },
+		// onCollapse: function(){
+		// 	alert('onCollapse');
+		// },
+		// onBeforeExpand : function(){
+		// 	alert('beforeExpand');
+		// 	return false; //返回false 
+		// },
+		// onExpand: function(){
+		// 	alert('onExpand');
+		// },
+		// 在窗口最大化时触发
+		// onMaximize:function(){
+
+		// },
+		// //还原窗口触发
+		// onRestore:function(){
+
+		// },
+		// //最小化时触发
+		// onMinimize:function(){
+
+		// },
+		//改变大小时
+		// onResize : function(width,height){
+		// 	alert(width+height);
+		// },
+		// 移动时
+		// onMove : function(width,height){
+		// 	alert(width+height);
+		// },
+
+
+		// onBeforeOpen : function(){
+		// 	alert('beforeopen');
+		// },
+
+	});
+	
+	// 方法列表
+	//$('#box').panel('panel').css('position','absolute');
+		//$('#box').panel('destroy'); //销毁
+		// 点击改变大小
+		// $(document).click(function(){
+		// 	$('#box').panel('resize',{
+		// 		'width':600,
+		// 		'height':300,
+		// 	});
+		// });
+
+		// 点击移动
+		// $(document).click(function(){
+		// 	$('#box').panel('move',{
+		// 		'top':600,
+		// 		'left':300,
+		// 	});
+		// });
+		
+		//console.log($('#box').panel('options'));
+		// 换成panel header body 返回头对象body对象
+
+		// $('#box').panel('setTitle','标题');
+		// $('#box').panel('open',false);  //默认true.跳过before事件
+		// $('#box').panel('close');
+		// $('#box').panel('destroy');
+		//$('#box').panel('maximize');
+		//$('#box').panel('restore');
+		// $('#box').panel('minimize');
+		// $('#box').panel('collapse');
+		// $('#box').panel('expand');
+		
+
+
+
+});	
+</script>
+</head>
+<body>
+
+	<div id="box">
+		<p>内容区域</p>
+	</div>
+
+	<div id="tt">
+		<a class="icon-add" onclick="javascript:alert('add')">   </a>
+		<a class="icon-edit" onclick="javascript:alert('edit')">   </a>
+		<a class="icon-cut" onclick="javascript:alert('cut')">   </a>
+	</div>
+	
+</body>
+</html>

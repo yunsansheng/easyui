@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖validatebox  不能通过标签，都是js-->
+
+
+<style>
+
+</style>
+
+<script>
+
+$(function(){
+
+	$('#box').combo({
+		required:true,
+		width:150,
+		height:26,
+		// panelWidth:300,
+		// panelHeight:300,
+		//editable:false,
+		//disabled:false,
+		//readonly:true,  //只读可以提交信息，禁用不能。
+		//hasDownArrow:false,//不显示下拉箭头
+		//value:'123',
+		//delay:1000,//延迟时间
+
+		// 事件
+		// onShowPanel:function(){
+		// 	alert('显示触发');
+		// },
+		// onHidePanel:function(){
+		// 	alert('隐藏触发');
+		// },
+		// onChange:function(newValue,oldValue){
+		// 	alert(newValue+'|'+oldValue);
+		// },
+
+
+	});
+
+	$('#food').appendTo($('#box').combo('panel'));
+	$('#food input').click(function(){
+		var v = $(this).val();
+		var t = $(this).next('span').text();
+		// alert(v);
+		// alert(t);
+		$('#box').combo('setValue',v).combo('setText',t).combo('hidePanel');
+	});
+
+
+	// 方法
+	// options
+	//console.log($('#box').combo('textbox'));
+	// destroy
+	$(document).click(function(){
+		//$('#box').combo('resize','width');
+		// $('#box').combo('showPanel');
+		console.log($('#box').combo('isValid'));
+
+	});
+	// disable  enable readonly validate isValid
+
+	// clear  清空控件的值
+	// reset  重置空间的值
+	// getText setText getValue setValue
+	// getValues setValues  多选返回数组
+
+});	
+</script>
+</head>
+<body>
+
+<input type="text" id="box">
+
+<div id="food">
+ 	<div style="background: #eee;padding: 5px;">选择食物</div>
+ 	<div style="padding:5px;">
+ 		<input type="radio" name="food" value="01" ><span>煎饼果子</span><br/>
+ 		<input type="radio" name="food" value="02" ><span>牛腩米线</span><br/>
+ 		<input type="radio" name="food" value="03" ><span>水果沙拉</span><br/>
+ 		<input type="radio" name="food" value="04" ><span>蛋黄派</span><br/>
+ 		<input type="radio" name="food" value="05" ><span>其他</span><br/>
+ 	</div>
+</div>
+
+</body>
+</html>

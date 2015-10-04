@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
+
+<!-- 这个依赖于wndow progressbar-->
+<!-- alert 警告框  confirm 确认框 prompt提示框 progress 进度框 -->
+<!-- 特殊组件全部在js完成，不用class -->
+
+<style>
+
+</style>
+<script>
+$(function(){
+
+	// 方法
+	// 警告框，可以放四个参数，可以都为空。
+	/*
+	$.messager.alert('title','text','info',function(){
+		alert('1');
+	});  //error,question,info,warning
+
+	// 注意：第三个参数是function
+	$.messager.confirm('title','text',function(flag){
+		if(flag){
+			alert('删除成功');
+		}
+	});  
+	// 提示框
+	$.messager.prompt('title','text',function(content){
+		if(content){
+			alert(content);
+		}
+	});  
+	*/
+
+	// $.messager.progress({
+	// });
+	/*
+	$.messager.progress({
+		title:'执行中',
+		msg:'努力上传中',
+		text:'{value}%', //默认
+		interval:100,//默认300毫秒，执行完的时间
+	});
+	//console.log($.messager.progress('bar'));
+	//$.messager.progress('close'); //关闭
+	$.messager.show({
+		title:'mynew',
+		msg:'1s后关闭',
+		timeout:1000,
+		showType:'slide',  //null slide fade show 默认slide
+		showspeed:8000, //收缩展开用的时间
+		// style:{
+		// 	top:0,
+		// }
+	});
+
+	setTimeout(function() {
+		$.messager.show({
+			title:'mynew',
+			msg:'1s后关闭',
+			timeout:1000,
+			showType:'slide',  //null slide fade show 默认slide
+			showspeed:8000, //收缩展开用的时间
+		});
+	}, 3000);
+	*/
+
+	/*
+	$.messager.defaults={
+		ok:'是',
+		cancel:'否',
+	};
+
+	$.messager.confirm('title','text',function(flag){
+		if(flag){
+			alert('删除成功');
+		}
+	}); 
+	*/
+
+	 
+
+
+
+});	
+</script>
+</head>
+<body>
+	
+	<div id="box">
+		
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Easy UI</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css"/>
+
+<!--依赖Menubutton-->
+
+
+<style>
+
+</style>
+
+<script>
+
+	// function qq(name,value){
+	// 	alert(name+'-'+value);
+	// }
+
+$(function(){
+
+	$('#ss').searchbox({
+		menu:'#box',
+		searcher:function qq(name,value){
+			alert(name+'-'+value);
+		},
+		prompt:'请输入关键字',
+		width:300,
+		height:26,
+		value:'固定值',
+		//disabled:true,
+
+	});
+	
+	// 没有事件，但是方法有很多
+	// console.log($('#ss').searchbox('menu'));//返回总对象。
+	// var m = $('#ss').searchbox('menu');
+	// m.menu ('setIcon',{
+	// 	target:m.menu('findItem','体育频道').target,
+	// 	iconCls:'icon-save',	
+	// });
+
+	// console.log($('#ss').searchbox('textbox'));
+	// console.log($('#ss').searchbox('getValue'));
+	// $('#ss').searchbox('setValue','123');
+	//console.log($('#ss').searchbox('getName'));
+	 //$('#ss').searchbox('selectName','sports');
+	 // $('#ss').searchbox('destroy');
+	 //$('#ss').searchbox('resize',500);
+	 //$('#ss').searchbox('disable');
+	 //$('#ss').searchbox('enable');
+	 // $('#ss').searchbox('clear'); 
+	 // reset
+
+
+});	
+</script>
+</head>
+<body>
+<!--
+<div class="easyui-searchbox" style="width:300px"
+data-options="menu:'#box',prompt:'请输入关键字',searcher:qq"></div>
+-->
+
+<div id="ss" ></div>
+
+<div id="box">
+	<div data-options="iconCls:'icon-ok'">所有频道</div>
+	<div name="sports">体育频道</div>
+</div>
+
+</body>
+</html>
