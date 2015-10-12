@@ -245,7 +245,9 @@ $(function(){
 				$.messager.alert('提示','请选择要删除的行','info');
 			}
 		},
-	}
+	}  //定义方法集尾
+
+
 
 	//定义datagrid属性。
 	$('#box').datagrid({

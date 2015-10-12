@@ -8,14 +8,14 @@
 <!DOCTYPE html>
 <html>
 <title>主页</title>
-<meta charset="UTF-8" />
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 
 <script type="text/javascript" src="jquery-easyui-1.4.3/jquery.min.js"></script>
 <script type="text/javascript" src="jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" ></script>
 <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
 <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/icon.css" />
 <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.3/themes/addicon.css" />
-
+<script type="text/javascript" src="js/jquery.edatagrid.js"></script>
 <script type="text/javascript" src="js/home.js" charset="utf-8"></script> <!--homejs-->
 <link rel="stylesheet" href="css/home.css" type="text/css" charset="utf-8"></link> <!--homecss-->
 
@@ -51,6 +51,7 @@
 		<div id="tabs" >
 			<div title="起始页" iconcls="icon-house" style="padding:0 10px;">
 				<h3>欢迎来到qsones管理系统！</h3>
+				<h3> 打开： <a href="http://naotu.baidu.com/home" target="_blank">百度脑图</a></h3>
 			</div>
 		</div>
 	

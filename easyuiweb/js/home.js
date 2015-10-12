@@ -3,7 +3,7 @@
 	$('#nav').tree({
 		url : 'nav.php',
 		lines : true,
-		animate:true,
+		// animate:true,
 
 		
 		onDblClick: function(node) {  
